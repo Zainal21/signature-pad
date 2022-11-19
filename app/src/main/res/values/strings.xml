@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Signature Pad</string>
+    <string name="copyright_text_hint">Created By Muhamad Zainal Arifin</string>
+    <string name="text_hint_create_signature">Create Signature</string>
+    <string name="text_hint_splash">Signature Pad</string>
+    <string name="clear_pad">Clear Signature</string>
+    <string name="save_signature">Save Signature</string>
+</resources>
