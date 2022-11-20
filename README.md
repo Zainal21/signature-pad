@@ -20,7 +20,7 @@
 $  git clone git remote add origin https://github.com/Zainal21/signature-pad.git
 ```
 
-2. open your android studion and run
+2. open your android studio and run
 
 ## Example Result
 
