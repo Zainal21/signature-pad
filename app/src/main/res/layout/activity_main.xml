@@ -106,8 +106,9 @@
                     android:layout_marginVertical="8sp"
                     android:layout_marginHorizontal="8sp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <Button
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/spacing_medium">
+                    <androidx.appcompat.widget.AppCompatButton
                         android:layout_marginHorizontal="10sp"
                         android:id="@+id/clear_button"
                         android:layout_width="0dp"
@@ -119,17 +120,21 @@
                         android:backgroundTint="@color/bgPrimary"
                         android:shadowColor="@color/gray_800"
                         android:elevation="@dimen/cardview_default_radius"
-                        style="?android:attr/buttonBarButtonStyle" />
-                    <Button
-                        android:layout_marginHorizontal="10sp"
+                        style="@style/TextAppearance.AppCompat.Button"
+                        android:enabled="true"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/save_signature"
+                        style="@style/TextAppearance.AppCompat.Button"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="@string/save_signature"
-                        android:textColor="@color/gray_100"
+                        android:layout_marginHorizontal="10sp"
+                        android:layout_weight="1"
+                        android:background="@color/blueSecondary"
                         android:elevation="20dp"
-                        style="?android:attr/buttonBarButtonStyle" />
+                        android:enabled="true"
+                        android:text="@string/save_signature"
+                        android:textColor="#212121" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
