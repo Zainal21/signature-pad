@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
+import android.graphics.Rect
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -21,6 +22,7 @@ import com.muhamadzain.signature_pad.base.BaseActivity
 import java.io.*
 
 
+@Suppress("DEPRECATED_IDENTITY_EQUALS")
 class MainActivity : BaseActivity() {
 
     private lateinit var mSignaturePad : SignaturePad
@@ -153,6 +155,7 @@ class MainActivity : BaseActivity() {
         val newBitmap = Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(newBitmap)
         canvas.drawColor(Color.WHITE)
+//        canvas.drawBitmap(bitmap, new Rect(0,0,50,50), new Rect(100,100,150,150) , null))
         val stream: OutputStream = FileOutputStream(photo)
         newBitmap.compress(Bitmap.CompressFormat.JPEG, 80, stream)
         stream.close()
@@ -181,7 +184,7 @@ class MainActivity : BaseActivity() {
         this@MainActivity.sendBroadcast(mediaScanIntent)
     }
 
-    fun addSvgSignatureToGallery(signatureSvg: String?): Boolean {
+    private fun addSvgSignatureToGallery(signatureSvg: String?): Boolean {
         var result = false
         try {
             val svgFile = File(
