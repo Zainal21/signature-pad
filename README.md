@@ -30,7 +30,7 @@ $  git clone git remote add origin https://github.com/Zainal21/signature-pad.git
 
 - Sign Pad
 
-- ![sign pad](public/signature_pad.png)
+![sign pad](public/signature_pad.png)
 
 Copyright © 2022 by Muhamad Zainal Arifin
 
