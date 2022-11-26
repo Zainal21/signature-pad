@@ -8,7 +8,6 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
-import android.graphics.Rect
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -151,11 +150,12 @@ class MainActivity : BaseActivity() {
         return file
     }
 
-    private fun saveBitmapToJPG(bitmap: Bitmap, photo: File?) {
+    @Throws(IOException::class)
+    fun saveBitmapToJPG(bitmap: Bitmap, photo: File?) {
         val newBitmap = Bitmap.createBitmap(bitmap.width, bitmap.height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(newBitmap)
         canvas.drawColor(Color.WHITE)
-//        canvas.drawBitmap(bitmap, new Rect(0,0,50,50), new Rect(100,100,150,150) , null))
+        canvas.drawBitmap(bitmap, 0f, 0f, null)
         val stream: OutputStream = FileOutputStream(photo)
         newBitmap.compress(Bitmap.CompressFormat.JPEG, 80, stream)
         stream.close()
@@ -171,8 +171,10 @@ class MainActivity : BaseActivity() {
             saveBitmapToJPG(signature, photo)
             scanMediaFile(photo)
             result = true
+            Log.d(" debug", "result success")
         } catch (e: IOException) {
             e.printStackTrace()
+            Log.d(" debug", e.printStackTrace().toString())
         }
         return result
     }
